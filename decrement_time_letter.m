@@ -10,7 +10,7 @@ h = figure;
 axis tight manual % this ensures that getframe() returns a consistent size
 set(h,'Position',[100 100 1250 500])
 
-filename = 'decrement_time_pk_var_print.gif';
+filename = 'decrement_time_pk_var_print.tiff';
 
 input =  build_TCI_eleveld (mPatient, plan, dur, 0);
 val = dur*60;
@@ -80,4 +80,4 @@ title ('Decrement time relative to final concentration')
 frame = getframe(h);
 im = frame2im(frame);
 [imind,cm] = rgb2ind(im,256);
-imwrite(imind,cm,filename,'gif');
+imwrite(imind,cm,filename,'tiff','Resolution',300);
